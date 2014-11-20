@@ -7,11 +7,6 @@
 
 #import "KHStoreManager.h"
 
-#define PRODUCT_ID @"iosStoreKit"
-
-#import "CustomNetwork.h"
-#import "CustomData.h"
-
 @interface KHStoreManager () <SKProductsRequestDelegate, SKRequestDelegate, SKPaymentTransactionObserver>
 {
 	NSArray *_products;
