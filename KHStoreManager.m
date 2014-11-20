@@ -54,7 +54,6 @@ static KHStoreManager *sharedManager = nil;
 {
 	NSMutableSet *skuSet = [NSMutableSet set];
 
-    //검증할 In-App ID를 skuSet 추가
     for (int i = 0; i < productIdList.count; i++) {
         [skuSet addObject:productIdList[i]];
     }
@@ -106,7 +105,7 @@ static KHStoreManager *sharedManager = nil;
 {
 	if ([SKPaymentQueue canMakePayments]) {
         [[SKPaymentQueue defaultQueue] addPayment:[SKPayment paymentWithProduct:product]];
-        //중복구매 막으려면
+        
         //		if (![_purchasedProducts containsObject:product.productIdentifier]) {
         //			[[SKPaymentQueue defaultQueue] addPayment:[SKPayment paymentWithProduct:product]];
         //		}
@@ -129,7 +128,7 @@ static KHStoreManager *sharedManager = nil;
                 break;
             }
         }
-        //중복구매 막으려면
+        
         //		if (![_purchasedProducts containsObject:_subscribeProductId]) {
         //			
         //			for (SKProduct *product in _products) {
@@ -172,11 +171,9 @@ static KHStoreManager *sharedManager = nil;
     if ([transactionDate compare:currentDate] == NSOrderedSame
         || [transactionDate compare:currentDate] == NSOrderedAscending) {
         
-        //구독상태임
         return NO;
     }
     
-    //구독상태 아님
 	return YES;
 }
 

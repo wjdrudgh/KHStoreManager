@@ -25,9 +25,9 @@
 
 + (KHStoreManager *)sharedManager;
 
-//단권 구매
+
 - (void)buyProduct:(SKProduct *)product;
-//정기구독 구매
+
 - (void)buySubscribeProduct;
 
 - (BOOL)isAvailableProduct:(NSString *)productId;
