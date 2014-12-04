@@ -165,6 +165,10 @@ static KHStoreManager *sharedManager = nil;
 
 - (BOOL)isSubscribeExpired:(NSString *)productId
 {
+    if (_subscribeTransaction == nil) {
+        return YES;
+    }
+    
     NSDate *currentDate = [NSDate date];
     NSDate *transactionDate = _subscribeTransaction.transactionDate;
     
